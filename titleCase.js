@@ -1,5 +1,5 @@
 function titleCase(str) {
-  return str.splice( );
+  return str.split ( );
 }
 
 console.log(titleCase("I'm a little tea pot"));
