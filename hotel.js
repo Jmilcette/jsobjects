@@ -25,6 +25,7 @@ function rentRoom() {
             console.log(singleroom);
         }
         var whichRoom = readline.question("Above are our avaiable rooms. Which one would you like to rent? '1,2,3, or 4?'")
+        // If they choose room 1, then it will tell them the amenities and the remaining vacant rooms.
         if (whichRoom == 1) {
             occupiedRooms.push(rooms[0]);
             delete rooms[0];
@@ -32,18 +33,21 @@ function rentRoom() {
             console.log("The rooms left available are" + rooms + ". Tell a friend to test their luck at the Chance hotel!");
         }
         else if (whichRoom == 2) {
+            // If they choose room 2, then it will tell them the amenities and the remaining vacant rooms.
             occupiedRooms.push(rooms[1]);
             delete rooms[1];
             console.log("Congratualtions! You've chosen the 'Nightmare' Room! These are your amenities:" + amenities[2] + "Enjoy your stay!")
             console.log("The rooms left available are" + rooms + ". Tell a friend to test their luck at the Chance hotel!");
         }
         else if (whichRoom == 3) {
+            // If they choose room 3, then it will tell them the amenities and the remaining vacant rooms.
             occupiedRooms.push(rooms[2]);
             delete rooms[2];
             console.log("Congratualtions! You've chosen the 'Gold' Room! These are your amenities:" + amenities[3] + "Enjoy your stay!")
             console.log("The rooms left available are" + rooms + ". Tell a friend to test their luck at the Chance hotel!");
         }
         else if (whichRoom == 4) {
+            // If they choose room 4, then it will tell them the amenities and the remaining vacant rooms.
             occupiedRooms.push(rooms[3]);
             delete rooms[3];
             console.log("Congratualtions! You've chosen the 'Trashy' Room! These are your amenities:" + amenities[4] + "Enjoy your stay!")
