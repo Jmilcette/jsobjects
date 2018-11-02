@@ -16,10 +16,10 @@ function rentRoom() {
     var occupiedRooms = [];
 
     var amenities = [
-        [" Tea Time every 2 hours", " Classical Music will be played", " You have the finest silverware", " and Ludwig van Beethoven will come into your room from time to time! "],
-        [" Freddy Kreuger will visit your dreams", " you'll be rooming with Satan", " The floor is lava", " and it hails brimstone inside at all times! "],
-        [" Literally Everything in your room is made out of gold", " Theres a gold pooping goose", " Rumpelstiltskin is spinning gold in the corner", " and it will periodically rain gold! "],
-        [" You'll be rooming with Oscar the grouch", " The floor will be covered in bile", " Your bed is a cardboard mat", " and it rains ketchup every now and then... "]
+        [" For the wonderfully low price of $1200 a night, Tea Time every 2 hours", " Classical Music will be played", " You have the finest silverware", " and Ludwig van Beethoven will come into your room from time to time! "],
+        [" For the wonderfully low price of $6000 a night, Freddy Kreuger will visit your dreams", " you'll be rooming with Satan", " The floor is lava", " and it hails brimstone inside at all times! "],
+        [" For the wonderfully low price of $100 a night, Literally Everything in your room is made out of gold", " Theres a gold pooping goose", " Rumpelstiltskin is spinning gold in the corner", " and it will periodically rain gold! "],
+        [" For the wonderfully low price of $3000 a night, you'll be rooming with Oscar the grouch", " The floor will be covered in bile", " Your bed is a cardboard mat", " and it rains ketchup every now and then... "]
     ];
     //If they say y", then it will list the rooms
     if (yesOrNo == y.toUpperCase()) {
@@ -32,29 +32,29 @@ function rentRoom() {
         // If they choose room 1, then it will tell them the amenities and the remaining vacant rooms.
         if (whichRoom == 1) {
             occupiedRooms.push(rooms[0]);
-            delete rooms[0];
-            console.log("Congratulations! You've chosen the 'Classy' Room! These are your amenities:" + amenities[0] + "Enjoy your stay!");
-            console.log("The rooms left available are" + rooms + ". Tell a friend to test their luck at the Chance hotel!");
+            rooms.splice(0,1);
+            var classyRoom = readline.question("Congratulations!  You've chosen the 'Classy' Room! The price of the room is $2000 a month, Can you afford this? Y/N: These are your amenities:" + amenities[0] + "Enjoy your stay!");
+            console.log("The rooms left available are " + rooms + ". Tell a friend to test their luck at the Chance hotel!");
         }
         else if (whichRoom == 2) {
             // If they choose room 2, then it will tell them the amenities and the remaining vacant rooms.
             occupiedRooms.push(rooms[1]);
-            delete rooms[1];
-            console.log("Congratulations! You've chosen the 'Nightmare' Room! These are your amenities:" + amenities[1] + "Enjoy your stay!")
-            console.log("The rooms left available are" + rooms + ". Tell a friend to test their luck at the Chance hotel!");
+            rooms.splice(1,1);
+            console.log("Congratulations! You've chosen the 'Nightmare' Room! These are your amenities:" + amenities[1] + "Enjoy your stay!");
+            console.log("The rooms left available are " + rooms + ". Tell a friend to test their luck at the Chance hotel!");
         }
         else if (whichRoom == 3) {
             // If they choose room 3, then it will tell them the amenities and the remaining vacant rooms.
             occupiedRooms.push(rooms[2]);
-            delete rooms[2];
-            console.log("Congratulations! You've chosen the 'Gold' Room! These are your amenities:" + amenities[2] + "Enjoy your stay!")
-            console.log("The rooms left available are" + rooms + ". Tell a friend to test their luck at the Chance hotel!");
+            rooms.splice(2,1);
+            console.log("Congratulations! You've chosen the 'Gold' Room! These are your amenities:" + amenities[2] + "Enjoy your stay!");
+            console.log("The rooms left available are " + rooms + ". Tell a friend to test their luck at the Chance hotel!");
         }
         else if (whichRoom == 4) {
             // If they choose room 4, then it will tell them the amenities and the remaining vacant rooms.
             occupiedRooms.push(rooms[3]);
-            delete rooms[3];
-            console.log("Congratulations! You've chosen the 'Trashy' Room! These are your amenities:" + amenities[3] + "Enjoy your stay!")
+            rooms.splice(3,1);
+            console.log("Congratulations! You've chosen the 'Trashy' Room! These are your amenities:" + amenities[3] + "Enjoy your stay!");
             console.log("The rooms left available are " + rooms + ". Tell a friend to test their luck at the Chance hotel!");
         }
     }
