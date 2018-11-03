@@ -21,7 +21,7 @@ function rentRoom() {
         [" For the wonderfully low price of $100 a night, Literally Everything in your room is made out of gold", " Theres a gold pooping goose", " Rumpelstiltskin is spinning gold in the corner", " and it will periodically rain gold! "],
         [" For the wonderfully low price of $3000 a night, you'll be rooming with Oscar the grouch", " The floor will be covered in bile", " Your bed is a cardboard mat", " and it rains ketchup every now and then... "]
     ];
-    //If they say y", then it will list the rooms
+    //If they say y", then it will list the room
     if (yesOrNo == y.toUpperCase()) {
 
         var rooms = Object.keys(vacantRooms);
