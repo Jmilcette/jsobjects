@@ -1,0 +1,11 @@
+#topPage {
+    text-align: center;
+}
+
+.jumbotron {
+    background-image: url(https://s-ec.bstatic.com/xdata/images/hotel/1200x900/37668020.jpg?k=30957456b95fe7c0713f0a709a6bf4167b82bc102511a90f56ba718d72e51890&o=);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    height: 600px;
+}
