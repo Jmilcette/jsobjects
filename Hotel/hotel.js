@@ -32,28 +32,28 @@ function rentRoom() {
         // If they choose room 1, then it will tell them the amenities and the remaining vacant rooms.
         if (whichRoom == 1) {
             occupiedRooms.push(rooms[0]);
-            rooms.splice(0,1);
+            rooms.splice(0, 1);
             var classyRoom = readline.question("Congratulations!  You've chosen the 'Classy' Room! The price of the room is $2000 a month, Can you afford this? Y/N: These are your amenities:" + amenities[0] + "Enjoy your stay!");
             console.log("The rooms left available are " + rooms + ". Tell a friend to test their luck at the Chance hotel!");
         }
         else if (whichRoom == 2) {
             // If they choose room 2, then it will tell them the amenities and the remaining vacant rooms.
             occupiedRooms.push(rooms[1]);
-            rooms.splice(1,1);
+            rooms.splice(1, 1);
             console.log("Congratulations! You've chosen the 'Nightmare' Room! These are your amenities:" + amenities[1] + "Enjoy your stay!");
             console.log("The rooms left available are " + rooms + ". Tell a friend to test their luck at the Chance hotel!");
         }
         else if (whichRoom == 3) {
             // If they choose room 3, then it will tell them the amenities and the remaining vacant rooms.
             occupiedRooms.push(rooms[2]);
-            rooms.splice(2,1);
+            rooms.splice(2, 1);
             console.log("Congratulations! You've chosen the 'Gold' Room! These are your amenities:" + amenities[2] + "Enjoy your stay!");
             console.log("The rooms left available are " + rooms + ". Tell a friend to test their luck at the Chance hotel!");
         }
         else if (whichRoom == 4) {
             // If they choose room 4, then it will tell them the amenities and the remaining vacant rooms.
             occupiedRooms.push(rooms[3]);
-            rooms.splice(3,1);
+            rooms.splice(3, 1);
             console.log("Congratulations! You've chosen the 'Trashy' Room! These are your amenities:" + amenities[3] + "Enjoy your stay!");
             console.log("The rooms left available are " + rooms + ". Tell a friend to test their luck at the Chance hotel!");
         }
@@ -67,3 +67,8 @@ function rentRoom() {
 }
 
 rentRoom();
+
+function chooseRoom() {
+    var chosenRoom = document.getElementById("chooser").value;
+    for (var i =o; i < vacantRooms)
+}
