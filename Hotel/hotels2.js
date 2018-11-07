@@ -30,7 +30,7 @@ function display() {
     var chosenRoom = document.getElementById("chooser").value;
     for (let i = 0; i < rooms.length; i++) {
         if (chosenRoom == rooms[i].name) {
-            document.getElementById("displayroom").innerText = ;
+            document.getElementById("displayroom").innerText = "You've chosen the", rooms[i].name, "room.";
         }
     }
 
