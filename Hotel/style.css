@@ -1,7 +1,7 @@
 .topPage {
     padding-left: 300px;
     text-align: center;
-    
+
 }
 
 /*.jumbotron {
@@ -12,6 +12,7 @@
     height: 600px;
 }
 */
+
 .container {
     position: relative;
     text-align: center;
@@ -19,9 +20,22 @@
 }
 
 .centered {
-    
+
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+form {
+    text-align: center;
+}
+
+.hotelSign {
+    font-family: 'Merriweather', serif;
+    font-size: 50px;
+}
+
+.imageOverlay {
+    
 }

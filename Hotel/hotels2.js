@@ -30,7 +30,8 @@ function display() {
     var chosenRoom = document.getElementById("chooser").value;
     for (let i = 0; i < rooms.length; i++) {
         if (chosenRoom == rooms[i].name) {
-        var removed = rooms.splice(rooms[i]);
+        document.getElementById("displayroom").innerText = "You have chosen " + rooms[i].name + " for your stay.";
+         var removed = rooms.splice(rooms[i]);
         occupiedRooms.push(removed);
         }
     }
