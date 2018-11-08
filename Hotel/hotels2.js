@@ -22,7 +22,7 @@ rooms[3] = {
     name: "The Refuse Alcove",
     price: "$1000 a night"
 
-}
+};
 
 var occupiedRooms = [];
 
@@ -30,7 +30,8 @@ function display() {
     var chosenRoom = document.getElementById("chooser").value;
     for (let i = 0; i < rooms.length; i++) {
         if (chosenRoom == rooms[i].name) {
-            document.getElementById("displayroom").innerText = "You've chosen the", rooms[i].name, "room.";
+        var removed = rooms.splice(rooms[i]);
+        occupiedRooms.push(removed);
         }
     }
 
