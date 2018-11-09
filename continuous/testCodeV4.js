@@ -24,4 +24,5 @@ var todoList = {
         todo.completed = !todo.completed;
         this.displayTodos();
     }
+    
 };
