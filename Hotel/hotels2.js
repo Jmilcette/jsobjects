@@ -31,8 +31,6 @@ function display() {
     for (let i = 0; i < rooms.length; i++) {
         if (chosenRoom == rooms[i].name) {
         document.getElementById("displayroom").innerText = "You have chosen " + rooms[i].name + " for your stay.";
-         var removed = rooms.splice(rooms[i]);
-        occupiedRooms.push(removed);
         }
     }
 

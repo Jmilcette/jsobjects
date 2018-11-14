@@ -2,6 +2,9 @@ var todoList = {
     todos: [],
     displayTodos: function() {
         console.log('My Todos', this.todos);
+        for (let i = 0; i < this.todos.length; i++) {
+            console.log(this.todos[i].todoText);
+        }
     },
     addTodo: function(todoText) {
         this.todos.push({
