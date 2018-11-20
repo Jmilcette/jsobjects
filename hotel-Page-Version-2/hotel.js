@@ -18,7 +18,7 @@ var hotel = {
     },
 
     bookAroom: function(roomNumberReq) {
-        if (this.roomsavailable() > 0) {
+        if (this.roomsAvailable() > 0) {
             for (let i = 0; i < this.roomNumbers.length; i++) {
                 if (this.roomNumbers[i] == roomNumberReq) {
                     this.roomNumbersBooked = this.roomNumbers.splice(i, 1).concat(this.roomNumbersBooked);
@@ -36,9 +36,8 @@ var hotel = {
         }
     },
     bookRandomRoom: function(numOfRooms) {
-
         var randomRoom = this.roomNumbers[Math.floor(Math.random() * this.roomNumbers.length)];
-        this.roomNumbersBooked = this.roomNumbers.splice(this.roomsAvailable.indexOf(randomRoom), 1).concat(this.roomNumbersBooked);
+        this.roomNumbersBooked = this.roomNumbers.splice(this.roomNumbers.indexOf(randomRoom), 1).concat(this.roomNumbersBooked);
         console.log(this.roomNumbersBooked);
         return;
     }
