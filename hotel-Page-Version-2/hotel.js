@@ -40,5 +40,6 @@ var hotel = {
         this.roomNumbersBooked = this.roomNumbers.splice(this.roomNumbers.indexOf(randomRoom), 1).concat(this.roomNumbersBooked);
         console.log(this.roomNumbersBooked);
         return;
+        
     }
 };
