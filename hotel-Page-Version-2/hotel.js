@@ -35,6 +35,7 @@ var hotel = {
             console.log("No rooms Available");
         }
     },
+    
     bookRandomRoom: function(numOfRooms) {
         var randomRoom = this.roomNumbers[Math.floor(Math.random() * this.roomNumbers.length)];
         this.roomNumbersBooked = this.roomNumbers.splice(this.roomNumbers.indexOf(randomRoom), 1).concat(this.roomNumbersBooked);
