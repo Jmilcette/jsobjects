@@ -1,5 +1,5 @@
 var hotel = {
-    name: "CareerDevs Hotel",
+    name: "Gwallah Gwallah",
     rating: 5.0,
     roomRate: 325.00,
     roomNumbers: ["101", "102", "103", "104", "105", "106", "107"],
@@ -35,14 +35,24 @@ var hotel = {
             console.log("No rooms Available");
         }
     },
-    
+
     bookRandomRoom: function(numOfRooms) {
         var randomRoom = this.roomNumbers[Math.floor(Math.random() * this.roomNumbers.length)];
         this.roomNumbersBooked = this.roomNumbers.splice(this.roomNumbers.indexOf(randomRoom), 1).concat(this.roomNumbersBooked);
         console.log(this.roomNumbersBooked);
         return;
     },
-    unBookRoom: function() {
-        
-    }
 };
+var roomList = "<ul>";
+document.getElementById("hotelName").innerText = hotel.name;
+
+
+
+for (var i = 0; i < hotel.roomNumbers.length; i++) {
+    roomList += "<li>" + hotel.roomNumbers[i] + "</li>";
+
+}
+
+roomList += "</ul>";
+
+document.getElementById("rmsAvail").innerHTML = roomList;
