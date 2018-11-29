@@ -5,22 +5,22 @@ var library = {
     booksAvailable: ["101", "102", "103", "104", "105", "106", "107"],
     booksBeingRented: [],
     bookGenre: "Science-fiction",
-    roomsAvailable: function(booksAvailable, booksBeingRented) {
+    booksAvailable: function(booksAvailable, booksBeingRented) {
         return this.booksAvailable.length - this.booksBeingRented.length;
     },
 
-    numberOfRoomsBooked: function() {
+    rentedBooks: function() {
         return this.booksBeingRented.length;
     },
 
-    numberOfRooms: function() {
-        return this.roomNumber.length + this.booksBeingRented.length;
+    numberOfBooks: function() {
+        return this.booksAvailable.length + this.booksBeingRented.length;
     },
 
-    bookAroom: function(roomNumberReq) {
-        if (this.roomsAvailable() > 0) {
+    bookAroom: function(booksRequested) {
+        if (this.booksAvailable() > 0) {
             for (let i = 0; i < this.booksAvailable.length; i++) {
-                if (this.booksAvailable[i] == roomNumberReq) {
+                if (this.booksAvailable[i] == booksRequested) {
                     this.booksBeingRented = this.booksAvailable.splice(i, 1).concat(this.booksBeingRented);
                     console.log(this.booksBeingRented);
                     return;
@@ -36,9 +36,9 @@ var library = {
         }
     },
 
-    bookRandomRoom: function(numOfRooms) {
-        var randomRoom = this.booksAvailable[Math.floor(Math.random() * this.booksAvailable.length)];
-        this.booksBeingRented = this.booksAvailable.splice(this.booksAvailable.indexOf(randomRoom), 1).concat(this.booksBeingRented);
+    rentRandomBook: function(numOfBooks) {
+        var randomBook = this.booksAvailable[Math.floor(Math.random() * this.booksAvailable.length)];
+        this.booksBeingRented = this.booksAvailable.splice(this.booksAvailable.indexOf(randomBook), 1).concat(this.booksBeingRented);
         console.log(this.booksBeingRented);
         return;
     },
