@@ -1,36 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>This is the text that appears in the tab of your browser. Neato!</title>
-        <style type="text/css">
-            #libraryName {
-                color:red;
-            }
-            #slogan {
-                color:green;
-            }
-            .books {
-                color:teal;
-            }
-        </style>
-        
-        
-    </head>
-    
-    <body>
-        <h1 id="libraryName">CareerDevs Library</h1>    
-        <h3 id="slogan">Expand upon your coding knowledge at the CareerDevs Library</h3>
-        
-        <p>Code the night away, in our technology inspired rooms.</p>
-        
+
+<head>
+    <title>This is the text that appears in the tab of your browser. Neato!</title>
+    <style type="text/css">
+        #libraryName {
+            color: red;
+        }
+
+        #slogan {
+            color: green;
+        }
+
+        .books {
+            color: teal;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h1 id="libraryName">CareerDevs Library</h1>
+    <h3 id="slogan">Expand upon your coding knowledge at the CareerDevs Library</h3>
+
+    <p>Code the night away, in our technology inspired rooms.</p>
+    <div class="dropdown">
         <h3 class="books">Books available</h3>
+        <div id="booksAvail">
 
-            <div id="booksAvail">
+        </div>
 
-            </div>
-            
         <h3 class="books">Books currently being rented</h3>
         <p id="bookRented"></p>
-    </body>
-    <script src="library.js"></script>
+    </div>
+</body>
+<script src="library.js"></script>
+
 </html>

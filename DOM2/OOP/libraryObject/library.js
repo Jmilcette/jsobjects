@@ -5,7 +5,7 @@ var library = {
     booksAvailable: ["101", "102", "103", "104", "105", "106", "107"],
     booksBeingRented: [],
     bookGenre: "Science-fiction",
-    booksAvailable: function(booksAvailable, booksBeingRented) {
+    booksThatAreAvailable: function(booksAvailable, booksBeingRented) {
         return this.booksAvailable.length - this.booksBeingRented.length;
     },
 

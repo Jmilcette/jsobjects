@@ -56,3 +56,4 @@ for (var i = 0; i < hotel.roomNumbers.length; i++) {
 roomList += "</ul>";
 
 document.getElementById("rmsAvail").innerHTML = roomList;
+
