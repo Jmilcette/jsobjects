@@ -15,20 +15,6 @@
         .books {
             color: teal;
         }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
     </style>
 
 
@@ -39,15 +25,34 @@
     <h3 id="slogan">Expand upon your coding knowledge at the CareerDevs Library</h3>
 
     <p>Code the night away, in our technology inspired rooms.</p>
-    <div class="dropdown">
-        <h3 class="books">Books available</h3>
-        <div id="booksAvail">
-
+    <h3 class="books">Books available</h3>
+    <div id="booksAvail"></div>
+    
+  
+    <h3 class="books">Please select a Book</h3>
+        <div id="selectABook">
+            
         </div>
+        
+      <br>
+      
+    <p id="demo"></p>
+  
 
-        <h3 class="books">Books currently being rented</h3>
-        <p id="bookRented"></p>
-    </div>
+
+    <!-- <h3 class="books">Please select a Book</h3>
+    <select>
+        <option value="roar">roar</option>
+        <option value="roar!">roar!</option>
+        <option value="roar?">roar?</option>
+        <option value="rawr xD">rawr xD</option>
+        
+      
+        </select>
+    <p id="demo"></p>-->
+
+    <h3 class="books">Books currently being rented</h3>
+    <p id="bookRented"></p>
 </body>
 <script src="library.js"></script>
 

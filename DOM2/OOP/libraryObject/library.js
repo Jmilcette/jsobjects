@@ -34,6 +34,17 @@ var library = {
         else {
             console.log("Not Available");
         }
+
+    },
+    selectingABook: function() {
+        var selectBookList = "<form> <select id='selectedBook'>";
+        for (var i = 0; i < library.booksAvailable.length; i++) {
+            selectBookList += "<option value='library.booksAvailable[i]'>library.booksAvailable[i]</option>";
+        }
+
+        selectBookList += "</select> </form>";
+
+        document.getElementById("selectABook").innerHTML = selectBookList;
     },
 
     rentRandomBook: function(numOfBooks) {
@@ -56,3 +67,14 @@ for (var i = 0; i < library.booksAvailable.length; i++) {
 bookList += "</ul>";
 
 document.getElementById("booksAvail").innerHTML = bookList;
+
+var selectBookList = "<form> <select id='selectedBook'>";
+
+//Lets do some more research on escaping characters and quotes!!!
+for (var i = 0; i < library.booksAvailable.length; i++) {
+    selectBookList += "<option value=\'"+library.booksAvailable[i]+"\'>"+library.booksAvailable[i]+"</option>";
+}
+
+selectBookList += "</select> </form>";
+
+document.getElementById("selectABook").innerHTML = selectBookList;
