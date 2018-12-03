@@ -5,16 +5,7 @@ var venue = {
     seatsAvailable: [1, 2, 3, 4, 5, 6],
     seatsBooked: [],
     viewAvailableSeats: function() {
-        var selectSeatList = "<form> <select id='stsAvail'>";
-
-
-        for (var i = 0; i < this.seatsAvailable.length; i++) {
-            selectSeatList += "<option value=\'" + this.seatsAvailable[i] + "\'>" + venue.seatsAvailable[i] + "</option>";
-        }
-
-        selectSeatList += "</select> </form>";
-
-        document.getElementById("selectASeat").innerHTML = selectSeatList;
+       
     },
     bookSeat: function() {
 
@@ -27,7 +18,7 @@ var venue = {
 
 document.getElementById("venueName").innerText = venue.name;
 document.getElementById("slogan").innerText = venue.slogan;
-/*document.getElementById("slogan").innerText = "Where you'll find the best tickets! Fuck with us!";
+document.getElementById("slogan").innerText = "Where you'll find the best tickets!";
 var seatsList = "<ul>";
 
 for (var i = 0; i < venue.seatsAvailable.length; i++) {
@@ -35,7 +26,7 @@ for (var i = 0; i < venue.seatsAvailable.length; i++) {
 }
 seatsList += "</ul>";
 
-document.getElementById("stsAvail").innerHTML = seatsList;*/
+document.getElementById("stsAvail").innerHTML = seatsList;
 
 
 var selectSeatList = "<form> <select id=''>";
