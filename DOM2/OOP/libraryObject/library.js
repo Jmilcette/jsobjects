@@ -2,13 +2,12 @@ var library = {
     name: "Gwallah Gwallah",
     rating: 5.0,
     lateFee: 325.00,
-    booksAvailable: ["101", "102", "103", "104", "105", "106", "107"],
+    booksAvailable: [101, 102, 103, 104, 105, 106, 107],
     booksBeingRented: [],
     bookGenre: "Science-fiction",
     booksThatAreAvailable: function(booksAvailable, booksBeingRented) {
         return this.booksAvailable.length - this.booksBeingRented.length;
     },
-
     rentedBooks: function() {
         return this.booksBeingRented.length;
     },
@@ -54,10 +53,9 @@ var library = {
         return;
     },
 };
-var bookList = "<ul>";
 document.getElementById("libraryName").innerText = library.name;
 
-
+var bookList = "<ul>";
 
 for (var i = 0; i < library.booksAvailable.length; i++) {
     bookList += "<li>" + library.booksAvailable[i] + "</li>";
