@@ -5,20 +5,15 @@ var venue = {
     seatsAvailable: [1, 2, 3, 4, 5, 6],
     seatsBooked: [],
     viewAvailableSeats: function() {
-        var selectSeatList = "<form> <select id='selectASeat'>";
-
-
-        for (var i = 0; i < venue.seatsAvailable.length; i++) {
-            selectSeatList += "<a value=\'" + venue.seatsAvailable[i] + "\'>" + venue.seatsAvailable[i] + "</a>";
-        }
-
-        selectSeatList += "</select> </form>";
-
-        document.getElementById("selectASeat").innerHTML = selectSeatList;
+        console.log(this.seatsAvailable);
 
     },
     bookSeat: function() {
-
+        var buttonForSeats = "";
+        for (var i = 0; i < this.seatsAvailable.length; i++) {
+            buttonForSeats += "<button class='dropdown-item' onclick= value=\'" + this.seatsAvailable[i] + "\'>" + this.seatsAvailable[i] + "</button>";
+        }
+        document.getElementById("seatsDropDown").innerHTML = buttonForSeats;
     },
     refundSeat: function() {
 
@@ -28,7 +23,7 @@ var venue = {
 
 document.getElementById("venueName").innerText = venue.name;
 document.getElementById("slogan").innerText = "Where you'll find the best tickets!";
-var seatsList = "<ul>";
+/*var seatsList = "<ul>";
 
 for (var i = 0; i < venue.seatsAvailable.length; i++) {
     seatsList += "<li>" + venue.seatsAvailable[i] + "</li>";
@@ -36,3 +31,4 @@ for (var i = 0; i < venue.seatsAvailable.length; i++) {
 seatsList += "</ul>";
 
 document.getElementById("stsAvail").innerHTML = seatsList;
+*/

@@ -35,14 +35,17 @@
     <h3 id="slogan">SLOGAN</h3>
 
     <h3 class="seats">Seats available</h3>
-    <!--seats available will be written in here using the DOM-->
+    <!--seaclass="seats">Seats booked<ts available will be written in here using the DOM-->
     <div id="stsAvail"></div>
-    <button onclick="venue.viewAvailableSeats()" class="seats">View Available Seats</button>
-    <div id="selectASeat">
+    <div class="dropdown">
+  <button onclick="venue.bookSeat()" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    View Available Seats
+  </button>
+    <div id="seatsDropDown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
     </div>
     <br>
-    <h3 class="seats">Seats booked</h3>
+    <h3 /h3>
     <!--This is where the booked seats will be shown-->
     <p id="stsBooked"></p>
 </body>
