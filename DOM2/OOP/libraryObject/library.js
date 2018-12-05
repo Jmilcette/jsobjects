@@ -16,6 +16,7 @@ var library = {
         return this.booksAvailable.length + this.booksBeingRented.length;
     },
 
+
     bookAroom: function(booksRequested) {
         if (this.booksAvailable() > 0) {
             for (let i = 0; i < this.booksAvailable.length; i++) {

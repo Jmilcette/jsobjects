@@ -38,14 +38,15 @@
     <!--seaclass="seats">Seats booked<ts available will be written in here using the DOM-->
     <div id="stsAvail"></div>
     <div class="dropdown">
-  <button onclick="venue.bookSeat()" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button onclick="venue.viewAvailableSeats()" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     View Available Seats
   </button>
-    <div id="seatsDropDown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
+  
+    <div id="seatsDropDown" class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
     </div>
     <br>
-    <h3 /h3>
+    <p id="demo"></p>
+    <h3></h3> 
     <!--This is where the booked seats will be shown-->
     <p id="stsBooked"></p>
 </body>

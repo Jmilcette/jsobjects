@@ -2,16 +2,20 @@ var venue = {
     slogan: "Book with us. Our tickets are cheap!",
     name: "CareerDevs Venue",
     ticketPrice: 250,
-    seatsAvailable: [1, 2, 3, 4, 5, 6],
+    seatsAvailable: ["1","2", "3", "4", "5", "6"],
     seatsBooked: [],
-    viewAvailableSeats: function() {
-        console.log(this.seatsAvailable);
-
-    },
     bookSeat: function() {
+        if (this.seatsAvailable.length > 0) {
+
+            // Get selected seat from user
+            var seatPicked = document.getElementById("seatsDropDown").value;
+            document.getElementById("demo").innerHTML = "You picked seat " + seatPicked + ".";
+        }
+    },
+    viewAvailableSeats: function() {
         var buttonForSeats = "";
         for (var i = 0; i < this.seatsAvailable.length; i++) {
-            buttonForSeats += "<button class='dropdown-item' onclick= value=\'" + this.seatsAvailable[i] + "\'>" + this.seatsAvailable[i] + "</button>";
+            buttonForSeats += "<option class='dropdown-item' onclick=\'" + venue.bookSeat() + "\' value=\'" + this.seatsAvailable[i] + "\'>" + this.seatsAvailable[i] + "</option>";
         }
         document.getElementById("seatsDropDown").innerHTML = buttonForSeats;
     },
