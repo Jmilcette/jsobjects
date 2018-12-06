@@ -22,7 +22,7 @@ var venue = {
             buttonForSeats += "<option  onclick=\'" + venue.bookSeat() + "\' value=\'" + this.seatsAvailable[i] + "\'>" + this.seatsAvailable[i] + "</option>";
         }
         buttonForSeats += "</select> </form>"
-        document.getElementById("seatsDropDown").innerHTML = buttonForSeats;
+        document.getElementById("stsAvail").innerHTML = buttonForSeats;
     },
     refundSeat: function() {
 
