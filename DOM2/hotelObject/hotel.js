@@ -49,7 +49,7 @@ function selectRoom() {
     var roomPickedRemove = document.getElementById("mySelect");
     roomPickedRemove.remove(roomPickedRemove.selectedIndex);
 
-    hotel.numberOfRoomsBooked();
+
 }
 
 function unSelectRoom() {
