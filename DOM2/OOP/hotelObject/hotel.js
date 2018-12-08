@@ -1,12 +1,15 @@
 var hotel = {
-    name: "Gwallah Gwallah",
+    name: "CareerDevs JavaScript Hotel",
     rating: 5.0,
+    numberOfRooms: 5,
     roomRate: 325.00,
-    roomNumbers: ["101", "102", "103", "104", "105", "106", "107"],
+    roomNumbersAvailable: ["101", "102", "103", "104", "105", "106"],
     roomNumbersBooked: [],
     roomType: "Queen",
-    roomsAvailable: function(roomNumbers, roomNumbersBooked) {
-        return this.roomNumbers.length - this.roomNumbersBooked.length;
+
+    numberOfRoomsAvailable: function() {
+        // length of the number of rooms available, returned as an integer (1,5,20, etc)
+        return this.roomNumbersAvailable.length;
     },
 
     numberOfRoomsBooked: function() {
@@ -14,46 +17,72 @@ var hotel = {
     },
 
     numberOfRooms: function() {
-        return this.roomNumber.length + this.roomNumbersBooked.length;
+        return this.roomNumbersAvailable.length + this.roomNumbersBooked.length;
     },
 
-    bookAroom: function(roomNumberReq) {
-        if (this.roomsAvailable() > 0) {
-            for (let i = 0; i < this.roomNumbers.length; i++) {
-                if (this.roomNumbers[i] == roomNumberReq) {
-                    this.roomNumbersBooked = this.roomNumbers.splice(i, 1).concat(this.roomNumbersBooked);
-                    console.log(this.roomNumbersBooked);
-                    return;
-                }
-                else {
-                    console.log("Not a valid Room #");
-                }
-
-            }
+    bookRoom: function() {
+        if (this.numberOfRoomsAvailable() > 0) {
+            // select a random avaliable room
+            var randomRoom = this.roomNumbersAvailable[Math.floor(Math.random() * this.roomNumbersAvailable.length)];
+            this.roomNumbersAvailable.splice(this.roomNumbersAvailable.indexOf(randomRoom), 1);
+            this.roomNumbersBooked.push(randomRoom);
         }
-        else {
-            console.log("No rooms Available");
-        }
-    },
-
-    bookRandomRoom: function(numOfRooms) {
-        var randomRoom = this.roomNumbers[Math.floor(Math.random() * this.roomNumbers.length)];
-        this.roomNumbersBooked = this.roomNumbers.splice(this.roomNumbers.indexOf(randomRoom), 1).concat(this.roomNumbersBooked);
-        console.log(this.roomNumbersBooked);
-        return;
-    },
+    }
 };
-var roomList = "<ul>";
+
 document.getElementById("hotelName").innerText = hotel.name;
 
+// Select a user clicked specific room option from a dropdown
+function selectRoom() {
+    // Get selected room form user dropdown selection
+    var roomPicked = document.getElementById("mySelect").value;
+    document.getElementById("demo1").innerHTML = "You picked room " + roomPicked + ".";
+    // Test 
+    console.log(roomPicked);
+    console.log(hotel.roomNumbersAvailable.indexOf(roomPicked));
+    // Remove selected room from roomNumbersAvailable 
+    // Push selected room into roomNumbersBooked
+    hotel.roomNumbersAvailable.splice(hotel.roomNumbersAvailable.indexOf(roomPicked), 1);
+    hotel.roomNumbersBooked.push(roomPicked);
 
+    // Remove item from dropdown
+    var roomPickedRemove = document.getElementById("mySelect");
+    roomPickedRemove.remove(roomPickedRemove.selectedIndex);
 
-for (var i = 0; i < hotel.roomNumbers.length; i++) {
-    roomList += "<li>" + hotel.roomNumbers[i] + "</li>";
-
+    hotel.numberOfRoomsBooked();
 }
 
-roomList += "</ul>";
+function unSelectRoom() {
+    // Get selected room form user dropdown selection
+    var roomPicked = document.getElementById("myUnselect").value;
+    document.getElementById("demo2").innerHTML = "You picked room " + roomPicked + ".";
+    // Test 
+    console.log(roomPicked);
+    console.log(hotel.roomNumbersBooked.indexOf(roomPicked));
+    // Remove selected room from roomNumbersBooked 
+    // Push selected room into roomNumbersAvailable
+    hotel.roomNumbersBooked.splice(hotel.roomNumbersBooked.indexOf(roomPicked), 1);
+    hotel.roomNumbersAvailable.push(roomPicked);
 
-document.getElementById("rmsAvail").innerHTML = roomList;
+    // Remove item from dropdown
+    var roomPickedAdded = document.getElementById("myUnselect");
+    roomPickedAdded.remove(roomPickedAdded.selectedIndex);
+}
+//create the unselect dropdown
+var UnSelectrmList = "<form> <select id='myUnSelect'>";
+for (var i = 0; i < hotel.roomNumbersBooked.length; i++) {
 
+    UnSelectrmList += '<option value="' + hotel.roomNumbersBooked[i] + '">' + hotel.roomNumbersBooked[i] + "</option>";
+}
+UnSelectrmList += "</select> </form>";
+document.getElementById("rmsUnAvail").innerHTML = UnSelectrmList;
+
+// Create the select dropdown
+var SelectrmList = "<form> <select id='mySelect'>";
+for (var i = 0; i < hotel.roomNumbersAvailable.length; i++) {
+
+    SelectrmList += '<option value="' + hotel.roomNumbersAvailable[i] + '">' + hotel.roomNumbersAvailable[i] + "</option>";
+}
+SelectrmList += "</select> </form>";
+
+document.getElementById("rmsAvail").innerHTML = SelectrmList;

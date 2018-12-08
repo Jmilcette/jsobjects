@@ -1,37 +1,46 @@
-<!DOCTYPE html>
+<! DOCTYPE html>
+
 <html>
     <head>
-        <title>This is the text that appears in the tab of your browser. Neato!</title>
-        <style type="text/css">
-            #hotelName {
-                color:red;
+        <title>This is the text that appears in the tab of your browser.</title>
+        <style>
+            h1 {
+                color: red;    
             }
-            #slogan {
-                color:green;
+            
+            #slogan{
+                color: green;
             }
+            
             .rooms {
-                color:teal;
+                color: teal;
             }
         </style>
         
-        
     </head>
-    
-    <body>
-        <h1 id="hotelName">CareerDevs Hotel</h1>    
-        <h3 id="slogan">Where You Pay With Code!!!!</h3>
-        
-        <p>Code the night away, in our technology inspired rooms.</p>
-        
-        <h3 class="rooms">Rooms available</h3>
-
-            <div id="rmsAvail">
-
-            </div>
+        <body>
+            <h1 id="hotelName">CareerDevs Hotel</h1>
+            <h3 id="slogan">Where you pay with code!</h3>
+            <p>Code the night away, in our technology inspired rooms.</p>
             
-<!--<p id="rmAvail">Room list should appear here</p>-->        
-        <h3 class="rooms">Rooms booked</h3>
-        <p id="rmBooked"></p>
-    </body>
-    <script src="../hotel-Page-Version-2/hotel.js"></script>
+            <h3 class="rooms">Rooms Available</h3>
+            <h3 class ="rooms">Please Select A Room</h3>
+            
+           <!--Start of select method aka Drop Down Menu-->
+                <div id="rmsAvail"></div>
+                </br>
+                <div id="rmsUnAvail"></div>
+
+                <button type="button" onclick="selectRoom()">Select A Room</button>
+                <button type="button" onclick="UnselectRoom()">Return Room</button>
+                
+             
+                <p id="demo1"></p>
+                <p id="demo2"></p>
+                
+                <!--End of select method-->
+   
+        </body>
+        
+    <script src="hotel.js"></script>
 </html>
