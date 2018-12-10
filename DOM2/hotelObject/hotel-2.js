@@ -51,21 +51,20 @@ var hotel = {
     unBookRoom: function () {
         if (this.numberOfRoomsBooked() > 0 ) {
              var unBookDD = document.getElementById("selectedRoom").value;
-             this.roomNumbersAvailable .unshift(this.roomNumbersBooked.splice(this.roomNumbersBooked.indexOf(unBookDD), 1));
-
-             var roomsListed = "<form> <select id= 'UB'>"
+             this.roomNumbersAvailable.unshift(this.roomNumbersBooked.splice(this.roomNumbersBooked.indexOf(unBookDD), 1));
+            
+             var roomsListed = "<form> <select id= 'UB'>";
 
              for (var i = 0; i < this.roomNumbersBooked.length; i++) {
 
             roomsListed += "<option value =" + this.roomNumbersBooked[i] + ">" + this.roomNumbersBooked[i] + "</option>";
             }
-            roomsListed += "</select>";
-            roomsListed += "</form>";
-            document.getElementById("UB").innerHTML = roomsListed
+            roomsListed += "</select></form>";
+            document.getElementById("UB").innerHTML = roomsListed;
 
         }
     }
-}
+};
 
 
 // End of UL List Section
