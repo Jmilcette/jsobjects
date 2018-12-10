@@ -1,5 +1,5 @@
 var hotel = {
-    name: "CareerDevs JavaScript Hotel",
+    name: "DIVTOPIA",
     rating: 5.0,
     roomRate: 325,
     roomNumbersAvailable: ["101", "102", "103", "104", "105", "106"],

@@ -2,20 +2,44 @@
 <html>
 
 <head>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i|IBM+Plex+Sans+Condensed:400,400i|IBM+Plex+Sans:100,100i,400,400i,700,700i|IBM+Plex+Serif:400,400i" rel="stylesheet">
     <title> This is the text that appears in the tab browser. Neato!</title>
 
     <style>
         h1 {
-            color: blue;
+            color: black;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: normal;
         }
 
         #slogan {
-
-            color: green;
+            color: white;
+            font-family: 'IBM Plex Sans Condensed', sans-serif;
+            font-weight: lighter;
         }
 
         .rooms {
             color: teal;
+            font-family: 'IBM Plex Sans Condensed', sans-serif;
+            ;
+        }
+
+        body {
+            text-align: center;
+            background-color: white;
+        }
+
+        .header {
+            padding: 60px;
+            text-align: center;
+            background: gold;
+            color: white;
+            font-size: 30px;
+        }
+
+        p {
+            font-family: 'IBM Plex Sans Condensed', sans-serif;
+
         }
     </style>
 
@@ -23,49 +47,51 @@
 </head>
 
 <body>
-    <h1 id="hotelName">CareerDevs Hotel</h1>
-    <h3 id="slogan">Where You Pay With Code!</h3>
+    <div class="header">
+        <h1 id="hotelName">DIV-TOPICA</h1>
+        <h3 id="slogan">Where You Pay With Code!</h3>
+    </div>
     <p>Code the night away, in our technology inspired rooms.</p>
 
     <h3 class="rooms">Rooms Available</h3>
 
     <!--<p id="rmAvail">Room list should appear here</p>-->
 
-   <div id="rmsAvail">
+    <div id="rmsAvail">
 
-    </div> 
+    </div>
 
-     <!-- select method aka Drop Down Menu -->
-    <div id = "dropDown">
+    <!-- select method aka Drop Down Menu -->
+    <div id="dropDown">
 
 
-    <h3 class="rooms">Please Select A Room</h3>
-    
-    <div id="selectARoom">
+        <h3 class="rooms">Please Select A Room</h3>
+
+        <div id="selectARoom">
 
         </div>
     </div>
-    
+
     <br>
 
-    <button type = "button" onclick="hotel.bookRoom()">Book Room</button>
-    
+    <button type="button" onclick="hotel.bookRoom()">Book Room</button>
+
     <p id="demo"></p>
-     <!--EO select method -->
+    <!--EO select method -->
 
     <h3 class="rooms">Rooms Booked</h3>
     <p id="rmBooked"></p>
-    <div id="roomBooked" ></div>
-    <button type = "button" onclick="hotel. unBookRoom()">Un-Book Room</button>
-    <div id = "UBB">
-    <div id = "UB"></div>
-    <!-- EO select method ends -->
+    <div id="roomBooked"></div>
+    <button type="button" onclick="hotel. unBookRoom()">Un-Book Room</button>
+    <div id="UBB">
+        <div id="UB"></div>
+        <!-- EO select method ends -->
 </body>
 
 <script src="hotel-2.js"></script>
 
 </html>
-    
+
 
 
 </html>
