@@ -49,7 +49,10 @@ var hotel = {
         },
 
     unBookRoom: function () {
+        // If there are any rooms in the numberOfRoomsBooked array then run this function
         if (this.numberOfRoomsBooked() > 0 ) {
+            
+            // create 
              var unBookDD = document.getElementById("selectedRoom").value;
              this.roomNumbersAvailable.unshift(this.roomNumbersBooked.splice(this.roomNumbersBooked.indexOf(unBookDD), 1));
             
