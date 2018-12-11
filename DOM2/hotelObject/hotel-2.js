@@ -5,13 +5,13 @@ var hotel = {
     roomNumbersAvailable: ["101", "102", "103", "104", "105", "106"],
     roomNumbersBooked: [],
     roomType: "Queen",
-    
-    numberOfRoomsAvailable: function () {
+
+    numberOfRoomsAvailable: function() {
         //length of the number of rooms available, returned as an integer (1, 5, 20, etc)
         return this.roomNumbersAvailable.length;
     },
 
-    numberOfRooms: function () {
+    numberOfRooms: function() {
         //available rooms added to booked rooms 
         return this.roomNumbersAvailable.length + this.roomNumbersBooked.length;
     },
@@ -20,50 +20,62 @@ var hotel = {
         //only book a room if one is available
 
         if (this.numberOfRoomsAvailable() > 0) {
-            var selectedRoomDD =  document.getElementById("selectedRoom").value;
+            var selectedRoomDD = document.getElementById("selectedRoom").value;
             this.roomNumbersBooked.unshift(this.roomNumbersAvailable.splice(this.roomNumbersAvailable.indexOf(selectedRoomDD), 1));
-             ////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////
 
-             var roomsListed= "<form> <select id= 'selectedRoom'>";
+            var roomsListed = "<form> <select id= 'selectedRoom'>";
 
-             
+
             for (var i = 0; i < this.roomNumbersAvailable.length; i++) {
 
-            roomsListed += "<option value =" + this.roomNumbersAvailable[i] + ">" + this.roomNumbersAvailable[i] + "</option>";
+                roomsListed += "<option value =" + this.roomNumbersAvailable[i] + ">" + this.roomNumbersAvailable[i] + "</option>";
             }
             roomsListed += "</select>";
             roomsListed += "</form>";
-            document.getElementById("selectARoom").innerHTML = roomsListed ;
+            document.getElementById("selectARoom").innerHTML = roomsListed;
             ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            var roomsBooked = "<form> <select id= 'roomBooked'>";
-            for (var i = 0; i < this.roomNumbersBooked.length; i++) {
-
-            roomsBooked += "<option value =" + this.roomNumbersBooked[i] + ">" + this.roomNumbersBooked[i] + "</option>";
-            }
-            roomsBooked += "</select></form>";
-            document.getElementById("rmBooked").innerHTML = roomsBooked ;
-    
-             }
-
-        },
-
-    unBookRoom: function () {
-        // If there are any rooms in the numberOfRoomsBooked array then run this function
-        if (this.numberOfRoomsBooked() > 0 ) {
-            
-            // create 
-             var unBookDD = document.getElementById("selectedRoom").value;
-             this.roomNumbersAvailable.unshift(this.roomNumbersBooked.splice(this.roomNumbersBooked.indexOf(unBookDD), 1));
-            
-             var roomsListed = "<form> <select id= 'UB'>";
-
+            /* var roomsBooked = "<form> <select id= 'roomBooked'>";
              for (var i = 0; i < this.roomNumbersBooked.length; i++) {
 
-            roomsListed += "<option value =" + this.roomNumbersBooked[i] + ">" + this.roomNumbersBooked[i] + "</option>";
+                 roomsBooked += "<option value =" + this.roomNumbersBooked[i] + ">" + this.roomNumbersBooked[i] + "</option>";
+             }
+             roomsBooked += "</select></form>";
+             document.getElementById("rmBooked").innerHTML = roomsBooked;*/
+
+        }
+
+    },
+
+    updateAvailableRoomsList: function() {
+        var roomsListed = "<form> <select id = 'selecteRoom'>";
+        for (var i = 0; i < this.roomNumbersAvailable.length; i++) {
+            roomsListed += "<option value=" + this.roomNumbersAvailable[i] + ">" + this.roomNumbersAvailable[i] + "</option>";
+        }
+        roomsListed += "</select></form>";
+        document.getElementById("selectARoom").innerHTML = roomsListed;
+    },
+
+    unBookRoom: function() {
+        //Only unbook a room if there is a room booked
+
+        if (this.numberOfRoomsBooked() > 0) {
+            var unBookDD = document.getElementById("selectedRoom").value;
+            this.roomNumbersAvailable.unshift(this.roomNumbersBooked.splice(this.roomNumbersBooked.indexOf(unBookDD), 1));
+            ///////////////////////////////////////////////////////////////////////////////////////
+
+            var roomsListed = "<form> <select id= 'UB'>";
+
+
+            for (var i = 0; i < this.roomNumbersBooked.length; i++) {
+
+                roomsListed += "<option value =" + this.roomNumbersBooked[i] + ">" + this.roomNumbersBooked[i] + "</option>";
             }
-            roomsListed += "</select></form>";
+            roomsListed += "</select>";
+            roomsListed += "</form>";
             document.getElementById("UB").innerHTML = roomsListed;
+            //////////////////////////////////////////////////
 
         }
     }
@@ -87,16 +99,9 @@ document.getElementById("selectARoom").innerHTML = selectRoomList;
 var roomsBooked = "<form> <select id= 'bookedRoom'>";
 for (var i = 0; i < hotel.roomNumbersBooked.length; i++) {
 
-     roomsBooked += "<option value =" + hotel.roomNumbersBooked[i] + ">" + hotel.roomNumbersBooked[i] + "</option>";
+    roomsBooked += "<option value =" + hotel.roomNumbersBooked[i] + ">" + hotel.roomNumbersBooked[i] + "</option>";
 }
 roomsBooked += "</select></form>";
-document.getElementById("rmBooked").innerHTML = roomsBooked ;
+document.getElementById("rmBooked").innerHTML = roomsBooked;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var unBookDD = "<form> <select id= 'UB'>"
-for (var i = 0; i < this.roomNumbersBooked.length; i++) { 
-    roomsListed += "<option value =" + this.roomNumbersBooked[i] + ">" + this.roomNumbersBooked[i] + "</option>";
-            }
-roomsListed += "</select>";
-            roomsListed += "</form>";
-            document.getElementById("UB").innerHTML = roomsListed
