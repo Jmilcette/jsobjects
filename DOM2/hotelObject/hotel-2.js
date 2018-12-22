@@ -43,6 +43,7 @@ var hotel = {
             roomsBooked += "</select></form>";
             document.getElementById("rmBooked").innerHTML = roomsBooked;*/
 
+
         }
     this.updateAvailableRoomsList();
     this.updateBookedRoomsList();
