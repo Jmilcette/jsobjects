@@ -14,7 +14,6 @@ var hotel = {
     numberOfRooms: function() {
         //available rooms added to booked rooms 
         return this.roomNumbersAvailable.length + this.roomNumbersBooked.length;
-        
     },
     bookRoom: function() {
         //only book a room if one is available
